@@ -32,6 +32,10 @@ class RabbitMQSender
     {
         $this->channel->queue_declare($queue, false, false, false, false);
 
+        if(is_array($message)){
+            $message = json_encode($message);
+        }
+
         $msg = new AMQPMessage($message);
         return $this->channel->basic_publish($msg, '', $queue);
     }
