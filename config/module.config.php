@@ -15,7 +15,7 @@ return [
             Plugin\RabbitMQSenderPlugin::class => Plugin\Factory\PluginFactory::class,
         ],
         'aliases' => [
-            'rabbitmq-sender' => Plugin\RabbitMQSenderPlugin::class
+            'rabbitmq_sender' => Plugin\RabbitMQSenderPlugin::class
         ]
     ],
 ];

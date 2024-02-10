@@ -9,7 +9,7 @@ class RabbitMQSender
     protected $connection;
     protected $channel;
 
-	public function __construct($em, $sm)
+	public function __construct($sm)
     {
         $config = $sm->get('config');
         $rabbitmq = $config['rabbitmq-server'];
@@ -29,7 +29,7 @@ class RabbitMQSender
         return 'pong';
     }
 
-    public function run($queue, $message)
+    public function send($queue, $message)
     {
         $this->channel->queue_declare($queue, false, false, false, false);
 
