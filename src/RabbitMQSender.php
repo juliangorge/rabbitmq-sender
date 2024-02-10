@@ -9,9 +9,8 @@ class RabbitMQSender
     protected $connection;
     protected $channel;
 
-	public function __construct($sm)
+	public function __construct($config)
     {
-        $config = $sm->get('config');
         $rabbitmq = $config['rabbitmq-server'];
 
         $this->connection = new AMQPStreamConnection(
